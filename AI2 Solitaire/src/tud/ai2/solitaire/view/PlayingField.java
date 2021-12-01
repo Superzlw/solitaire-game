@@ -128,7 +128,7 @@ public class PlayingField extends JFrame {
 
         // create the high score button
         highscoreButton = new JButton("Highscore");
-        highscoreButton.setBounds(155 + OFFSET.x, 55 + OFFSET.y, 140, 25);
+		highscoreButton.setBounds(155 + OFFSET.x, 55 + OFFSET.y, 140, 25);
         highscoreButton.setFont(new Font("pixelated", Font.BOLD, 28));
         contentPane.add(highscoreButton);
         highscoreButton.addActionListener(new HighscoreListener());
@@ -151,7 +151,7 @@ public class PlayingField extends JFrame {
         //TODO task 7
         //----------------------- Reset Button Aufgabe -----------------------------------------------------------------------
 		resetButton = new JButton("Try Again");
-		resetButton.setBounds(185 + OFFSET.x, 85 + OFFSET.y, 140, 25);
+		resetButton.setBounds(155 + OFFSET.x, 85 + OFFSET.y, 140, 25);
 		resetButton.setFont(new Font("pixelated", Font.BOLD, 28));
 		contentPane.add(resetButton);
 		resetButton.addActionListener(new ActionListener() {
