@@ -2,7 +2,7 @@ package tud.ai2.solitaire.model.cards;
 
 public class CardStack extends AbstractCardStack {
     private static int MAX_STACK = 13;
-	private AbstractCard[] card_stack = new AbstractCard[MAX_STACK];
+	private AbstractCard[] card_stack = new Card[MAX_STACK];
 	int N = 0;
 
 	@Override
@@ -24,6 +24,8 @@ public class CardStack extends AbstractCardStack {
 	@Override
 	public AbstractCard peek() {
 		// TODO Auto-generated method stub
+		if (N == 0)
+			return null;
 		return card_stack[N - 1];
 	}
 

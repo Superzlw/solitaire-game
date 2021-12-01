@@ -29,11 +29,11 @@ public class Deck {
 	 */
     public Deck() {
 		cards = new ArrayList<AbstractCard>(52);
-		for (CardValue wert : CardValue.values()) {
+		for (CardValue value : CardValue.values()) {
 			// for(int i = 0; i < 13; i ++) {
-			for (Suit farbe : Suit.values()) {
+			for (Suit suit : Suit.values()) {
 				// CardValue wert = new CardValue();
-				Card tmpCard = new Card(farbe, wert);
+				Card tmpCard = new Card(suit, value);
 				// System.out.println(tmpCard.getSuit());
 				this.cards.add(tmpCard);
 				// System.out.println(this.cards.size());
@@ -48,11 +48,12 @@ public class Deck {
 	 */
     public void riffle(int iterations) {
 		int middle = cards.size() / 2;
-		List<AbstractCard> left = new ArrayList<AbstractCard>();
-		List<AbstractCard> right = new ArrayList<AbstractCard>();
 		for (int iteration = 0; iteration < iterations; iteration++) {
+			List<AbstractCard> left = new ArrayList<AbstractCard>();
+			List<AbstractCard> right = new ArrayList<AbstractCard>();
 			int bias = rand.nextInt(11) - 5; // bias is between -5 and 5
 			cutPoint = middle + bias;
+			// System.out.println(cutPoint);
 			for (int i = 0; i < cards.size(); i++) {
 				if (i < (middle + bias)) {
 					left.add(cards.get(i));
@@ -79,7 +80,7 @@ public class Deck {
 		int r_idx = 0; // index for right
 		List<AbstractCard> res = new ArrayList<AbstractCard>();
 		for (int i = 0; i < (num_l + num_r); i++) {
-			if (l_idx == num_l || r_idx == num_r)
+			if (l_idx >= num_l || r_idx >= num_r)
 				break;
 			if (rand.nextDouble() >= 0.5) {
 				res.add(left.get(l_idx++)); // random number >= 0.5: add the card of left into res

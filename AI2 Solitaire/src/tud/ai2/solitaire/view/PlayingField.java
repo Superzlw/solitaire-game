@@ -96,8 +96,8 @@ public class PlayingField extends JFrame {
     }
 
     /**
-     * method to build thr playing field frame
-     */
+	 * method to build the playing field frame
+	 */
     private void buildFrame() {
         // save the start time
         timeBegin = System.currentTimeMillis();
@@ -151,7 +151,7 @@ public class PlayingField extends JFrame {
         //TODO task 7
         //----------------------- Reset Button Aufgabe -----------------------------------------------------------------------
 		resetButton = new JButton("Try Again");
-		resetButton.setBounds(155 + OFFSET.x, 55 + OFFSET.y, 140, 25);
+		resetButton.setBounds(185 + OFFSET.x, 85 + OFFSET.y, 140, 25);
 		resetButton.setFont(new Font("pixelated", Font.BOLD, 28));
 		contentPane.add(resetButton);
 		resetButton.addActionListener(new ActionListener() {
@@ -159,7 +159,7 @@ public class PlayingField extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				System.out.println("test");
+				reset();
 
 			}
 		});
@@ -177,7 +177,7 @@ public class PlayingField extends JFrame {
         }
         deck = new Deck();
         deck.loadCardImages("assets/cards");
-        deck.riffle(20);
+		deck.riffle(20);
         layInitialCards();
         new CardPool(deck.getCards(), getContentPane());
         score = 0;

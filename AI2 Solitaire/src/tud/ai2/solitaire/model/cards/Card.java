@@ -53,13 +53,14 @@ public class Card extends AbstractCard {
 	@Override
 	public boolean isRevealed() {
 		// TODO Auto-generated method stub
+		// this.aufgedeckt = true;
 		return this.aufgedeckt;
 	}
 
 	@Override
 	public void setRevealed(boolean revealed) {
 		// TODO Auto-generated method stub
-		this.aufgedeckt = true;
+		this.aufgedeckt = revealed;
 	}
 
 	@Override
@@ -72,7 +73,7 @@ public class Card extends AbstractCard {
 			// URL url = new URL(path);
 			File strFile = new File(path);
 			URL url = strFile.toURL();
-			FrontImage = ImageIO.read(url);
+			this.FrontImage = ImageIO.read(url);
 		} catch (Exception IOException) {
 			// TODO: handle exception
 			// String errorString = "The path: " + path + "is wrong, please check again";
